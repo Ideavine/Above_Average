@@ -1,0 +1,38 @@
+<html>
+
+<head>
+	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+</head>
+<body>
+
+	<div class="graph-instruction">
+		<div class="graph-body">
+			<h3>
+
+				
+
+				Your total CO2 Score is <%= @CO2 %> vs. the Average New Yorker at <%= @aCO2 %> 
+				
+				
+			</h3>
+			<p>
+				Review your <%= link_to "Detailed Report", detailedgraphs_path %> to see a complete view of your footprint compared with the average New York City resident. 
+			</p>
+
+			<%= bar_chart [ 
+				{name: "Total CO2 Score", data:[
+					["Current User", @CO2],  
+					["Average New Yorker", @aCO2]
+				]
+			}
+		]
+		%>
+
+		
+	</div>
+
+</div>
+</div>
+</body>
+
+</html>

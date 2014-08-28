@@ -1,0 +1,45 @@
+
+<div style="background-color: rgba(250,250,250,0.6)">
+
+<div class="validation-messages">
+	<% if @travel.errors.any? %>
+		<ul>
+			<% @travel.errors.each do |field, msg| %>
+				<li><%= msg %></li> <br />
+   			<% end %>
+   		<ul>
+	<% end %>
+</div>
+
+	<div class="travel-instruction">
+		<h3>
+			Tell us how you travelled yesterday:
+		</h3>
+
+		<p>
+			You can use 
+			<%= link_to 'Google Maps', "https://www.google.com/maps/preview", target: "_blank" %> 
+			to calculate your trips.  Click on the link to open in a new page.  On the map, right click / control click and select 'Measure Distance' on the dropdown menu.  Add all the points for a single trip, then add the value into the form.  You can add multiple values to a single field and we'll do the math for you.  Seperate each number with a space: 1 3 7
+		</p>
+	</div>
+
+	<div class="travel-form">
+
+		<%= form_for([@user, @travel], method: :post) do |f| %>
+			<%= f.label "How much did you walk?" %><br>
+			<%= f.text_field :walk, placeholder: "in feet" %><br>
+			<%= f.label "What distance did you ride a bike?" %><br>
+			<%= f.text_field :bicycle, placeholder: "in miles" %><br>
+			<%= f.label "What distance did you train?" %><br>
+			<%= f.text_field :train, placeholder: "in miles" %><br>
+			<%= f.label "What distance did you ride the bus?" %><br>
+			<%= f.text_field :bus, placeholder: "in miles" %><br>
+			<%= f.label "What distance did you travel by car or taxi?" %><br>
+			<%= f.text_field :car, placeholder: "in miles" %><br>
+			<%= f.label "Did you fly?" %><br>
+			<%= f.text_field :plane, placeholder: "in miles" %><br>
+			<%= f.submit "Submit" %>
+		<% end %>
+	</div>
+</div>
+

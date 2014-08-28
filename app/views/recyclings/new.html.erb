@@ -1,0 +1,127 @@
+
+<div class="recycling-instruction">
+	<h3>
+		Recycling habits
+	</h3>
+	<p>
+		Move the sliders and try to match your habits to those described.
+	</p>
+</div>
+
+<div class="recycling-form">
+	<%= form_for([@user, @recycling], method: :post) do |f| %>
+
+		<%= f.label "Generally required local recycling" %><br>
+		<div>
+		<%= f.range_field :local, :min=>0, :max=>100, :step =>20, :value=>40, :class=>"local-slide" %>
+
+			<p id="local-slider-value"></p>
+		</div>
+			<script type="text/javascript">
+			$(document).ready(function() {
+				$('.local-slide').on('change', function(s) {
+					var val = $(this).val();
+					var msg = "";
+					if (val == 0) {
+
+						msg = "Does not apply to me, because I never use anything.  I've never read a newspaper, eaten take-out, or purchased anything that comes in none biodegradable packaging.  When I need a temporary container, I make it out of hair and fingernails.";
+					} else if (val == 20) {
+						msg = "Ugh.  It’s kinda a hassle.  I try to get the big stuff, but don’t sweat it.";
+					} else if (val == 40) {
+						msg = "I don’t think about it too much.  It’s a connivence thing.  If I have the opportunity I will totally recycle.";
+					} else if (val == 60 ) {
+						msg = "I could do better, but I could totally do worse.  I don’t sweat using the garbage, but keep things separate around the house.  Sometimes if a container has been in the refrigerator too long, I’ll toss it instead of cleaning it out and recycling.";
+					} else if (val == 80 ) {
+						msg = "I follow the local rules to the letter in my own home.  Occasionally, when I’m out and about, I’ll use the trash can.  I trust the documentation that the city/state provides, and assume that everything gets to the best place.";
+					} else
+						msg = "I never waste anything.  When I use a plastic bottle, I’ll carry it around with me until it can be properly recycled.  I won’t use a garbage receptacles that says: ‘Contents Sorted and Recycled’ unless I research the validity of the claim first, and verify the quality of the recycling process.";
+					$('#local-slider-value').html(msg);
+				});
+			});
+			</script>
+
+		<%= f.label "Compost and Food Waste" %><br>
+		<%= f.range_field :compost, :min=>0, :max=>100, :step =>20, :value=>40, :class=>"compost-slide" %>
+
+			<p id="compost-slider-value"></p>
+
+			<script type="text/javascript">
+			$(document).ready(function() {
+				$('.compost-slide').on('change', function(s) {
+					var val = $(this).val();
+					var msg = "";
+					if (val == 0) {
+						msg = "Doesn’t apply to me, because I eat all my food all the time or abstain from it completely.";
+					} else if (val == 20) {
+						msg = "Wait what’s this?  I think composted my food in San Francisco once.";
+					} else if (val == 40) {
+						msg = "I mostly use all the food I buy.  I try to freeze things before they go bad, or sauté things all together, or blend questionable fruit in a smoothy.  Sometimes the dog gets the leftovers.";
+					} else if (val == 60 ) {
+						msg = "It’s kinda smelly, but when I have to time, I bring some  scraps to the farmers market.  They have a small bin for deposits.";
+					} else if (val == 80 ) {
+						msg = "I do pretty well.  But sometimes it’s a hassle.";
+					} else
+						msg = "I compost all my food scraps.";
+					$('#compost-slider-value').html(msg);
+				});
+			});
+			</script>
+
+		<%= f.label "Clothes and Fabric" %><br>
+		<%= f.range_field :fabric, :min=>0, :max=>100, :step =>20, :value=>40, :class=>"fabric-slide" %>
+
+			<p id="fabric-slider-value"></p>
+
+			<script type="text/javascript">
+			$(document).ready(function() {
+				$('.fabric-slide').on('change', function(s) {
+					var val = $(this).val();
+					var msg = "";
+					if (val == 0) {
+						msg = "Doesn’t apply to me, because I’m a nudist and I don’t use blankets, towels, or any kind of furniture that is made with fabric.";
+					} else if (val == 20) {
+						msg = "You can recycle fabric?";
+					} else if (val == 40) {
+						msg = "Most of the time I donate my old clothes and give the things I don’t use to friends or family.  The last time I moved, I didn’t have time and a lot of stuff ended up in the garbage.";
+					} else if (val == 60 ) {
+						msg = "I like to donate or give away most of my clothes.  But I don’t worry about sheets and towels or any of the things that goodwill won’t accept.";
+					} else if (val == 80 ) {
+						msg = "Most of my clothes are donated.  I try to recycle other types of fabric, but the recycling center only accepts fabric a few times a year, and last time I forgot.";
+					} else
+						msg = "All my old clothes are donated to a responsible organization.  Sheets and towels are brought to a recycling center and reused.  I like to reuse old fabric in creative ways.";
+					$('#fabric-slider-value').html(msg);
+				});
+			});
+			</script>
+
+		<%= f.label "e-waste" %><br>
+		<%= f.range_field :ewaste, :min=>0, :max=>100, :step =>20, :value=>40, :class=>"ewaste-slide" %>
+
+			<p id="ewaste-slider-value"></p>
+
+			<script type="text/javascript">
+			$(document).ready(function() {
+				$('.ewaste-slide').on('change', function(s) {
+					var val = $(this).val();
+					var msg = "";
+					if (val == 0) {
+						msg = "Doesn’t apply to me, because I’m a luddite.  I’m not using a computer right now.";
+					} else if (val == 20) {
+						msg = "I don’t sweat it.  It goes into the garbage or I give my old stuff away.";
+					} else if (val == 40) {
+						msg = "I like to get some money for my old tech, but all the worthless stuff like batteries and printer cartridges are stupid.";
+					} else if (val == 60 ) {
+						msg = "I have a pile of old stuff in a drawer.  It’s on my list of things to do, and most of the time I get to it.";
+					} else if (val == 80 ) {
+						msg = "I may hang on to old stuff for a while, but I try to get it sorted across the different concerns as quickly as possible.  Occasionally a battery may get tossed.";
+					} else
+						msg = "Every bit of e-waste is sold or recycled.  Not a single drop of heavy metal is mishandled.";
+					$('#ewaste-slider-value').html(msg);
+				});
+			});
+			</script>
+
+		<%= f.submit "reuse this button" %>
+
+	<% end %>
+</div>

@@ -1,0 +1,70 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrapper {
+	margin: 0px 10px 0px 10px;
+}
+
+.user-introduction {
+	margin: 35px;
+}
+
+.user-introduction h3 {
+	font-size: 28px;
+}
+
+.user-introduction p {
+	font-size: 18px;
+}
+
+.user-form-divs {
+	float: left;
+	padding: 10px;
+	margin: 25px;
+	max-width: 250px;
+	border-radius: 12px;
+	transition: background-color 0.5s ease;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.user-form-divs:hover {
+	transition: background-color 0.5s ease;
+	background-color: rgba(255, 210, 68, 1);
+}
+
+.user-form-divs p {
+	width: 200px;
+	font-size: 18px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+}
+
+.user-form-divs a:hover {
+	text-decoration: none;
+}
+
+.user-form-divs img {
+	display: block;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 25px;
+}
+
+.user-graphs {
+	padding: 10px;
+	clear: both;
+	margin: 35px;
+	background-color: lightgrey;
+}
+
+p.empty-data {
+	padding: 10px;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
