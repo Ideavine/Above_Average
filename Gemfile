@@ -7,6 +7,7 @@ gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 
+gem 'heroku'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -33,7 +34,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 gem 'chartkick'
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 # group_by_date options with gem 'chartkick'
 gem 'groupdate'
 # Use sqlite3 as the database for Active Record
