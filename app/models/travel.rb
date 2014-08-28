@@ -1,55 +1,34 @@
 class Travel < ActiveRecord::Base
 	
 	validates :walk,
-		:inclusion => { :in => 0..1000000, :message => "numbers only please, no decimals or symbols"},
+		:inclusion => { :in => 0..1000000, :message => "Walking: numbers only please.  No decimals or symbols.  Put 0 if you didn't travel via one of these options."},
 		:exclusion => { :in => -1000000..-1, 
 			:message => "No negitive values please."}
 
 	validates :bicycle,
-		:inclusion => { :in => 0..1000000, :message => "numbers only please, no decimals or symbols"},
+		:inclusion => { :in => 0..1000000, :message => "Biking: numbers only please.  No decimals or symbols.  Put 0 if you didn't travel via one of these options."},
 		:exclusion => { :in => -1000000..-1, 
 			:message => "No negitive values please."}
 
 	validates :train,
-		:inclusion => { :in => 0..1000000, :message => "numbers only please, no decimals or symbols"},
+		:inclusion => { :in => 0..1000000, :message => "Train: numbers only please.  No decimals or symbols.  Put 0 if you didn't travel via one of these options."},
 		:exclusion => { :in => -1000000..-1, 
 			:message => "No negitive values please."}
 
-	validates :bus,
-		:inclusion => { :in => 0..1000000, :message => "numbers only please, no decimals or symbols"},
+	validates :bus, 
+		:inclusion => { :in => 0..1000000, :message => "Bus: numbers only please.  No decimals or symbols.  Put 0 if you didn't travel via one of these options."},
 		:exclusion => { :in => -1000000..-1, 
 			:message => "No negitive values please."}
 
 	validates :car,
-		:inclusion => { :in => 0..1000000, :message => "numbers only please, no decimals or symbols"},
+		:inclusion => { :in => 0..1000000, :message => "Car: numbers only please.  No decimals or symbols.  Put 0 if you didn't travel via one of these options."},
 		:exclusion => { :in => -1000000..-1, 
 			:message => "No negitive values please."}
 
 	validates :plane,
-		:inclusion => { :in => 0..1000000, :message => "numbers only please, no decimals or symbols"},
+		:inclusion => { :in => 0..1000000, :message => "Flying: numbers only please.  No decimals or symbols.  Put 0 if you didn't travel via one of these options."},
 		:exclusion => { :in => -1000000..-1, 
 			:message => "No negitive values please."}
-		
-
-	# validates_format_of
-
-	# validates :walk, 
-	# 	:numericality => {:message => "Numbers only please, no decimals."}
-
-	# validates :bicycle, 
-	# 	:numericality => {:message => "Numbers only please, no decimals."}
-
-	# validates :train, 
-	# 	:numericality => {:message => "Numbers only please, no decimals."}
-
-	# validates :bus, 
-	# 	:numericality => {:message => "Numbers only please, no decimals."}
-
-	# validates :car, 
-	# 	:numericality => {:message => "Numbers only please, no decimals."}
-
-	# validates :plane, 
-	# 	:numericality => {:message => "Numbers only please, no decimals."}
 
 	
 	attr_accessor :walk_string
